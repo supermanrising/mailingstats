@@ -1,0 +1,118 @@
+// 
+// general.scss
+//
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+// Fix event bubbling on iOS devices
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    cursor: pointer;
+  }
+}
+
+// Custom CSS
+.date-pickers .react-datepicker-wrapper {
+  max-width: 300px;
+  float: right;
+  margin-left: 10px;
+}
+
+.cellEdit {
+  cursor: pointer;
+}
+
+.custom-text-link {
+  color: #2c8ef8;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.creativeItem {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+}
+.checkmark__circle.active {
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 0 auto 20px;
+  box-shadow: inset 0px 0px 0px #7ac142;
+}
+.checkmark.active {
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+}
+.checkmark__check.active {
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
+
+.copytoast {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.content-page {
+  min-height: 100vh !important;
+}
+
+.espid_invalid {
+  border: 1px solid #fa5c7c;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before,
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after,
+.custom-switch .custom-control-label::before,
+.custom-switch .custom-control-label::after {
+  cursor: pointer;
+}
